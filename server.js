@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import userRoutes from './routes/userRoutes.js';
 import postRoutes from "./routes/postRoutes.js";
 import {v2 as cloudinary} from "cloudinary";
+const cors  =  require('cors');
 
 dotenv.config();
 
@@ -19,6 +20,11 @@ cloudinary.config({
     api_secret:process.env.CLOUDINARY_API_SECRET
 
 });
+app.use(cors({
+    origin: "https://threads-frontend-six.vercel.app", // Allow only your frontend
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true 
+}));
 
 app.use(express.json({limit:"50mb"}));   // parse json data in req.body
 app.use(express.urlencoded({extended:true})); // parse for data in req.body
