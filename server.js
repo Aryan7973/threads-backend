@@ -21,7 +21,7 @@ cloudinary.config({
 
 });
 app.use(cors({
-    origin: "https://threads-frontend-two.vercel.app/", // Allow only your frontend
+    origin: "https://threads-frontend-two.vercel.app", // Allow only your frontend
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true 
 }));
