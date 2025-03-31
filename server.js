@@ -21,12 +21,12 @@ cloudinary.config({
 
 });
 app.use(cors({
-    origin: "https://threads-frontend-six.vercel.app", // Allow only your frontend
+    origin: "https://threads-frontend-two.vercel.app/", // Allow only your frontend
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true 
 }));
 
-app.use(express.json({limit:"50mb"}));   // parse json data in req.body
+app.use(express.json({limit:"50mb"})); // parse json data in req.body
 app.use(express.urlencoded({extended:true})); // parse for data in req.body
 app.use(cookieParser());
 
